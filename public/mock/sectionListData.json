@@ -1,0 +1,25 @@
+{
+  "sectionInfoList": [
+    {
+      "sectionTitle": "인기 상품",
+      "productList": [
+        {
+          "id": 1,
+          "imgSrc": "../assets/파프리카.jpg",
+          "name": "파프리카 2입",
+          "discountPercent": 20,
+          "price": 2000,
+          "originalPrice": 2500
+        },
+        {
+          "id": 2,
+          "imgSrc": "../assets/당근.jpg",
+          "name": "친환경 당근 400g",
+          "discountPercent": 33,
+          "price": 2000,
+          "originalPrice": 3000
+        }
+      ]
+    }
+  ]
+}
