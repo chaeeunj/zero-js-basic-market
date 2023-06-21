@@ -1,7 +1,7 @@
-import { getProductCard } from "./module/productCard.js";
-import { getProductList } from "./module/productList.js";
+import { getProductSection } from "./module/productSection.js";
 
-const productList = getProductList([{
+const productSection = getProductSection('인기 상품', [
+{
   "id": 4,
   "imgSrc": "/public/assets/삼겹살.jpg",
   "name": "구이용 삼겹살 600g (냉장)",
@@ -26,4 +26,4 @@ const productList = getProductList([{
   "originalPrice": 8400
 }]);
 
-document.body.appendChild(productList);
+document.body.appendChild(productSection);
