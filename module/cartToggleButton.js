@@ -34,12 +34,18 @@ export const getCartToggleButton = (productInfo) => {
     className: 'cart-toggle-btn',
     type: 'button',
     onclick: () => {
-      if (inCart) { // 이미 장바구니에 있다면
-        removeCartInfo(productInfo);
-        cartImage.src = 'public/assets/cart.png';
+      if (inCart) { // 이미 장바구니에 있다면 -> 장바구니에서 삭제
+        if (!confirm(`[${productInfo.name}]을 장바구니에서 삭제할까요?`)) return; // early-return
+          removeCartInfo(productInfo);
+          cartImage.src = 'public/assets/cart.png';
+            
       } else { // 장바구니에 없다면
         addCartInfo(productInfo);
         cartImage.src = 'public/assets/cartDisabled.png';
+        const result = confirm('장바구니에 담았습니다. 장바구니 페이지로 이동할까요?');
+        if (result) {
+          location.href = '/cart.html';
+        }
       }
       inCart = !inCart;
     }
