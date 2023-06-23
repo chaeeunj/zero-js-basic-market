@@ -1,5 +1,6 @@
 import { CART_COOKIE_KEY } from "./constants/cart.js";
 import { getCartInfo } from "./module/cartToggleButton.js";
+import { setPayInfo } from "./module/payModule.js";
 import { getProductList } from "./module/productList.js";
 import { makeDOMwithProperties } from "./utils/dom.js";
 
@@ -38,3 +39,5 @@ cartAllDeleteButtonDOM.onclick = () => {
   
   location.reload(); // 새로고침
 }
+
+setPayInfo();
