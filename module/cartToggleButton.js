@@ -31,7 +31,7 @@ const removeCartInfo = ({ id }) => {
   localStorage.setItem(CART_COOKIE_KEY, JSON.stringify(newCartInfo));
 }
 
-export const getCartToggleButton = (productInfo) => {
+export const getCartToggleButton = (productInfo, removeCartCallback) => {
   let inCart = isInCart(productInfo);
   const cartToggleBtn = makeDOMwithProperties('button', {
     className: 'cart-toggle-btn',
@@ -41,6 +41,7 @@ export const getCartToggleButton = (productInfo) => {
         if (!confirm(`[${productInfo.name}]을 장바구니에서 삭제할까요?`)) return; // early-return
           removeCartInfo(productInfo);
           cartImage.src = 'public/assets/cart.png';
+          removeCartCallback?.();
             
       } else { // 장바구니에 없다면
         addCartInfo(productInfo);

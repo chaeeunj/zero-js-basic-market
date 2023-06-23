@@ -15,6 +15,8 @@ const cartPayContainerDOM = document.getElementById('cart-pay-container');
 
 const cartInfo = getCartInfo();
 
+const reloadPage = () => location.reload();
+
 if (cartInfo.length < 1) {
   const noticeDOM = makeDOMwithProperties('div', {
     innerHTML: '장바구니에 상품이 없습니다.',
@@ -22,6 +24,6 @@ if (cartInfo.length < 1) {
   });
   sectionDOM.insertBefore(noticeDOM, cartPayContainerDOM);
 } else {
-  const productListDOM = getProductList(cartInfo);
+  const productListDOM = getProductList(cartInfo, reloadPage);
   sectionDOM.insertBefore(productListDOM, cartPayContainerDOM);
 }
